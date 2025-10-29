@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — Edinaz Solutions</title>
+  <meta name="description" content="Discover intelligent software solutions by Edinaz Solutions, focused on top-tier security and user simplicity." />
+  
+  <!-- Logo/Favicon -->
+  <link rel="icon" href="EdinazSolutions.ico" type="image/x-icon">
+  
+  <!-- Google Font & Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-dark': '#0b0b0d',
+            'panel': 'rgba(255,255,255,0.04)',
+            'accent1': '#7b1fa2', // Purple
+            'accent2': '#9b59ff', // Lighter Purple
+            'muted': '#9aa0a6',
+            'systemflow': '#3498db', // Blue for System Flow
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    /* Base Styles */
+    body {
+      background-color: #0b0b0d;
+      color: #e9eef6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.4;
+      padding: 1.5rem;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background Blobs */
+    .bg-blobs {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+      mix-blend-mode: screen; opacity: 0.8;
+      background: radial-gradient(1200px 500px at 10% 20%, rgba(123,31,162,0.12), transparent 6%),
+                  radial-gradient(1000px 450px at 90% 80%, rgba(155,89,255,0.08), transparent 6%);
+    }
+    .blob {
+      position: absolute; filter: blur(60px) saturate(120%); opacity: 0.7;
+      transform-origin: center; animation: float 12s ease-in-out infinite;
+      border-radius: 50%;
+    }
+    .b1 { width: 520px; height: 520px; left: -5%; top: -10%; background: linear-gradient(135deg, theme('colors.accent1'), theme('colors.accent2')); animation-duration: 18s }
+    .b2 { width: 420px; height: 420px; right: -8%; bottom: -12%; background: linear-gradient(135deg, #43006b, theme('colors.accent1')); animation-duration: 22s; opacity: 0.6 }
+    .b3 { width: 260px; height: 260px; left: 40%; bottom: -5%; background: linear-gradient(45deg, #5a0a88, #b886ff); animation-duration: 16s; opacity: 0.45 }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1) }
+      50% { transform: translateY(-30px) scale(1.06) }
+      100% { transform: translateY(0) scale(1) }
+    }
+
+    /* Custom Styles for Components */
+    .logo-img {
+      width: 52px; height: 52px; border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(123,31,162,0.35), inset 0 -6px 16px rgba(0,0,0,0.25);
+    }
+    .cta {
+      background: linear-gradient(90deg, theme('colors.accent2'), theme('colors.accent1'));
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .cta:hover { box-shadow: 0 10px 30px rgba(123,31,162,0.3); }
+    .cta:active { transform: translateY(1px); }
+
+    .btn-primary {
+      background: linear-gradient(90deg, theme('colors.accent2'), theme('colors.accent1'));
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 20px rgba(123,31,162,0.3);
+      transform: translateY(-1px);
+    }
+    
+    /* System Flow Icon Style */
+    .sys-icon-sf {
+        width: 60px; height: 60px; border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 24px; font-weight: 800; color: white;
+        background: linear-gradient(135deg, theme('colors.systemflow'), #2980b9);
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        margin-bottom: 1rem;
+    }
+    /* Placeholder Icon Style */
+    .sys-icon-placeholder {
+        width: 60px; height: 60px; border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 24px; font-weight: 800; color: theme('colors.muted');
+        background-color: theme('colors.panel');
+        border: 2px dashed theme('colors.gray.700');
+        margin-bottom: 1rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .product-list { grid-template-columns: 1fr !important; }
+      header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      nav { margin-top: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header class="flex justify-between items-center py-6 border-b border-gray-800/50">
+      <div class="flex items-center gap-4">
+        <!-- Logo Image in Header -->
+        <a href="index.html">
+          <img src="EdinazSolutions.ico" alt="Edinaz Solutions Logo" class="logo-img">
+        </a>
+        <div>
+          <h1 class="text-lg font-extrabold tracking-tight">Edinaz Solutions</h1>
+          <p class="text-xs text-muted">Product Portfolio</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation" class="flex items-center gap-4 text-sm font-semibold">
+        <a href="index.html#about" class="text-muted hover:text-white transition">About</a>
+        <a href="products.html" class="text-white transition underline underline-offset-4">Products</a>
+        <a href="contacts.html" class="text-muted hover:text-white transition">Contact</a>
+        <a href="systemflow.html" class="cta text-white py-2 px-4 rounded-xl shadow-lg">System Flow</a>
+      </nav>
+    </header>
+
+    <main class="py-12">
+      <h2 class="text-3xl font-extrabold tracking-tight mb-3">Our Product Portfolio</h2>
+      <p class="text-lg text-muted mb-10 max-w-3xl">We focus on developing simple, highly secure software that maximizes system performance and user efficiency.</p>
+
+      <section class="product-list grid md:grid-cols-2 lg:grid-cols-3 gap-8" aria-label="Product List">
+        
+        <!-- Product Card 1: System Flow -->
+        <div class="product-card bg-panel p-6 rounded-2xl border border-gray-800/70 shadow-xl backdrop-blur-sm flex flex-col">
+          <div class="sys-icon-sf">SF</div>
+          <h4 class="text-xl font-bold mb-2">System Flow — Optimizer & Security</h4>
+          <p class="text-base text-muted mb-4 flex-grow">
+            System Flow intelligently analyzes resources, eliminates digital clutter, and optimizes processes for peak performance and top-tier security on your desktop.
+          </p>
+          <div class="product-actions mt-auto pt-4 border-t border-gray-800">
+            <a href="systemflow.html" class="btn-primary inline-block text-center w-full">Details & Pricing</a>
+          </div>
+        </div>
+
+        <!-- Product Card 2: Upcoming Solution -->
+        <div class="product-card bg-panel p-6 rounded-2xl border border-gray-800/70 shadow-xl opacity-80 backdrop-blur-sm flex flex-col">
+          <div class="sys-icon-placeholder">⏳</div>
+          <h4 class="text-xl font-bold mb-2 text-muted">Upcoming Solution (TBA)</h4>
+          <p class="text-base text-muted mb-4 flex-grow">
+            We are currently developing our next solution. Stay tuned!
+          </p>
+          <div class="product-actions mt-auto pt-4 border-t border-gray-800">
+            <a href="contacts.html" class="text-muted border border-gray-700 hover:border-accent2 hover:text-accent2 py-3 px-6 rounded-xl font-semibold transition inline-block text-center w-full">
+              Follow for Updates
+            </a>
+          </div>
+        </div>
+        
+      </section>
+
+      <footer id="contact" class="flex justify-between items-center py-6 mt-12 border-t border-gray-800/50 text-xs text-muted">
+        <div>© **Edinaz Solutions** • All Rights Reserved.</div>
+        <div class="flex gap-4">
+          <a href="contacts.html" class="hover:text-white transition">Contact Us</a>
+          <span>•</span>
+          <a href="#" class="hover:text-white transition">Imprint</a>
+          <span>•</span>
+          <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

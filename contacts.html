@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us — Edinaz Solutions</title>
+  <meta name="description" content="The fastest way to reach Edinaz Solutions for support or questions is through Discord." />
+  
+  <!-- Logo/Favicon -->
+  <link rel="icon" href="EdinazSolutions.ico" type="image/x-icon">
+  
+  <!-- Google Font & Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-dark': '#0b0b0d',
+            'panel': 'rgba(255,255,255,0.04)',
+            'accent1': '#7b1fa2', // Purple
+            'accent2': '#9b59ff', // Lighter Purple
+            'muted': '#9aa0a6',
+            'discord': '#5865F2',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    /* Base Styles */
+    body {
+      background-color: #0b0b0d;
+      color: #e9eef6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.4;
+      padding: 1.5rem;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background Blobs */
+    .bg-blobs {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+      mix-blend-mode: screen; opacity: 0.8;
+      background: radial-gradient(1200px 500px at 10% 20%, rgba(123,31,162,0.12), transparent 6%),
+                  radial-gradient(1000px 450px at 90% 80%, rgba(155,89,255,0.08), transparent 6%);
+    }
+    .blob {
+      position: absolute; filter: blur(60px) saturate(120%); opacity: 0.7;
+      transform-origin: center; animation: float 12s ease-in-out infinite;
+      border-radius: 50%;
+    }
+    .b1 { width: 520px; height: 520px; left: -5%; top: -10%; background: linear-gradient(135deg, theme('colors.accent1'), theme('colors.accent2')); animation-duration: 18s }
+    .b2 { width: 420px; height: 420px; right: -8%; bottom: -12%; background: linear-gradient(135deg, #43006b, theme('colors.accent1')); animation-duration: 22s; opacity: 0.6 }
+    .b3 { width: 260px; height: 260px; left: 40%; bottom: -5%; background: linear-gradient(45deg, #5a0a88, #b886ff); animation-duration: 16s; opacity: 0.45 }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1) }
+      50% { transform: translateY(-30px) scale(1.06) }
+      100% { transform: translateY(0) scale(1) }
+    }
+
+    /* Custom Styles for Components */
+    .logo-img {
+      width: 52px; height: 52px; border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(123,31,162,0.35), inset 0 -6px 16px rgba(0,0,0,0.25);
+    }
+    .cta {
+      background: linear-gradient(90deg, theme('colors.accent2'), theme('colors.accent1'));
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .cta:hover { box-shadow: 0 10px 30px rgba(123,31,162,0.3); }
+    .cta:active { transform: translateY(1px); }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .contact-grid { grid-template-columns: 1fr !important; }
+      header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      nav { margin-top: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header class="flex justify-between items-center py-6 border-b border-gray-800/50">
+      <div class="flex items-center gap-4">
+        <!-- Logo Image in Header -->
+        <a href="index.html">
+          <img src="EdinazSolutions.ico" alt="Edinaz Solutions Logo" class="logo-img">
+        </a>
+        <div>
+          <h1 class="text-lg font-extrabold tracking-tight">Edinaz Solutions</h1>
+          <p class="text-xs text-muted">Contact Center</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation" class="flex items-center gap-4 text-sm font-semibold">
+        <a href="index.html#about" class="text-muted hover:text-white transition">About</a>
+        <a href="products.html" class="text-muted hover:text-white transition">Products</a>
+        <a href="contacts.html" class="text-white transition underline underline-offset-4">Contact</a>
+        <a href="systemflow.html" class="cta text-white py-2 px-4 rounded-xl shadow-lg">System Flow</a>
+      </nav>
+    </header>
+
+    <main class="py-12 flex flex-col items-center">
+      <h2 class="text-4xl font-extrabold tracking-tight mb-3 text-center">Get In Touch Instantly</h2>
+      <p class="text-xl text-muted mb-12 max-w-2xl text-center">The absolute fastest way to get support or connect with the community is via Discord.</p>
+
+      <div class="contact-grid grid max-w-lg">
+        
+        <!-- Discord Section (Primary Focus) -->
+        <div class="discord-promo bg-panel p-8 rounded-2xl shadow-2xl border border-gray-800/70 backdrop-blur-sm flex flex-col items-center text-center">
+            <svg class="w-16 h-16 text-discord mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.01 1.77A.995.995 0 0 0 21 1H3a.995.995 0 0 0-1.01.77v14.46c0 .54.46 1.01 1.01 1.01h15.25l2.75 3.52c.24.3.5.34.8.34.54 0 1.01-.46 1.01-1.01V2.78c0-.54-.46-1.01-1.01-1.01zM15.48 15.02c-.37 0-.7-.14-1.01-.43-.07-.06-.15-.12-.22-.19-.48.27-.99.42-1.55.45-.66.03-1.3-.12-1.92-.47-.57.25-1.19.38-1.85.38-.4 0-.8-.06-1.18-.18-.3-.1-.58-.23-.85-.39-.06.05-.13.1-.2.15-.3.26-.64.4-.99.43-.37 0-.7-.14-1.01-.43-.07-.06-.15-.12-.22-.19-.51.29-1.04.45-1.61.45-.43 0-.85-.09-1.25-.26V4.87c.32.14.67.24 1.05.3.36.06.74.08 1.13.08.76 0 1.51-.18 2.19-.55.67.37 1.41.55 2.19.55.76 0 1.51-.18 2.19-.55.68.37 1.43.55 2.19.55.4 0 .78-.02 1.13-.08.38-.06.73-.16 1.05-.3v9.74c-.37.28-.7.43-1.05.43z"/>
+            </svg>
+            <h3 class="text-2xl font-bold mb-4">Chat with @edinaz</h3>
+            <p class="text-base text-muted mb-6">Send a direct message or join our server for quick help, community discussions, and latest updates.</p>
+
+            <div class="w-full space-y-3">
+                <p class="text-xl font-mono bg-gray-900/50 py-3 px-6 rounded-xl text-accent2 border border-gray-700/50 font-extrabold shadow-inner">
+                    Direct DM: @edinaz
+                </p>
+                <!-- Replace with your actual invite link -->
+                <a href="https://discord.gg/J5qmuNfkM3" target="_blank" class="w-full flex items-center justify-center bg-discord text-white py-4 px-6 rounded-2xl font-bold text-lg transition duration-200 shadow-xl hover:bg-[#4752C4] transform hover:scale-[1.01] active:scale-[0.99]">
+                    Join the Edinaz Discord Server
+                </a>
+            </div>
+        </div>
+
+      </div>
+
+      <footer id="footer-contact" class="w-full flex justify-between items-center py-6 mt-20 border-t border-gray-800/50 text-xs text-muted max-w-7xl">
+        <div>© Edinaz Solutions • All Rights Reserved.</div>
+        <div class="flex gap-4">
+          <a href="contacts.html" class="hover:text-white transition">Contact Us</a>
+          <span>•</span>
+          <a href="#" class="hover:text-white transition">Imprint</a>
+          <span>•</span>
+          <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

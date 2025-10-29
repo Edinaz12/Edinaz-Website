@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Edinaz Solutions — Security & System Efficiency</title>
+  <meta name="description" content="Edinaz Solutions: Intelligent software focused on top tier security and ultimate user simplicity for system optimization." />
+  
+  <!-- Logo/Favicon -->
+  <link rel="icon" href="EdinazSolutions.ico" type="image/x-icon">
+  
+  <!-- Google Font & Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-dark': '#0b0b0d',
+            'panel': 'rgba(255,255,255,0.04)',
+            'accent1': '#7b1fa2', // Purple
+            'accent2': '#9b59ff', // Lighter Purple
+            'muted': '#9aa0a6',
+            'success': '#2ecc71',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    /* Base Styles */
+    body {
+      background-color: #0b0b0d;
+      color: #e9eef6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.4;
+      padding: 1.5rem;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background Blobs */
+    .bg-blobs {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+      mix-blend-mode: screen; opacity: 0.8;
+      background: radial-gradient(1200px 500px at 10% 20%, rgba(123,31,162,0.12), transparent 6%),
+                  radial-gradient(1000px 450px at 90% 80%, rgba(155,89,255,0.08), transparent 6%);
+    }
+    .blob {
+      position: absolute; filter: blur(60px) saturate(120%); opacity: 0.7;
+      transform-origin: center; animation: float 12s ease-in-out infinite;
+      border-radius: 50%;
+    }
+    .b1 { width: 520px; height: 520px; left: -5%; top: -10%; background: linear-gradient(135deg, theme('colors.accent1'), theme('colors.accent2')); animation-duration: 18s }
+    .b2 { width: 420px; height: 420px; right: -8%; bottom: -12%; background: linear-gradient(135deg, #43006b, theme('colors.accent1')); animation-duration: 22s; opacity: 0.6 }
+    .b3 { width: 260px; height: 260px; left: 40%; bottom: -5%; background: linear-gradient(45deg, #5a0a88, #b886ff); animation-duration: 16s; opacity: 0.45 }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1) }
+      50% { transform: translateY(-30px) scale(1.06) }
+      100% { transform: translateY(0) scale(1) }
+    }
+
+    /* Custom Styles for Components */
+    .logo-img {
+      width: 52px; height: 52px; border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(123,31,162,0.35), inset 0 -6px 16px rgba(0,0,0,0.25);
+    }
+    .cta {
+      background: linear-gradient(90deg, theme('colors.accent2'), theme('colors.accent1'));
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .cta:hover { box-shadow: 0 10px 30px rgba(123,31,162,0.3); }
+    .cta:active { transform: translateY(1px); }
+
+    .brand-visual .sys-icon {
+      width: 64px; height: 64px; border-radius: 14px;
+      background: linear-gradient(90deg, theme('colors.accent2'), theme('colors.accent1'));
+      box-shadow: 0 8px 25px rgba(123,31,162,0.4);
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 26px; color: white;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .hero { grid-template-columns: 1fr !important; }
+      .brand-visual { margin-top: 1.5rem; }
+      .features { grid-template-columns: 1fr !important; }
+      header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      nav { margin-top: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header class="flex justify-between items-center py-6 border-b border-gray-800/50">
+      <div class="flex items-center gap-4">
+        <!-- Logo Image in Header -->
+        <img src="EdinazSolutions.ico" alt="Edinaz Solutions Logo" class="logo-img">
+        <div>
+          <h1 class="text-lg font-extrabold tracking-tight">Edinaz Solutions</h1>
+          <p class="text-xs text-muted">Intelligent Software</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation" class="flex items-center gap-4 text-sm font-semibold">
+        <a href="#about" class="text-muted hover:text-white transition">About</a>
+        <a href="products.html" class="text-muted hover:text-white transition">Products</a>
+        <a href="contacts.html" class="text-muted hover:text-white transition">Contact</a>
+        <a href="systemflow.html" class="cta text-white py-2 px-4 rounded-xl shadow-lg">Discover System Flow</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero brand-hero grid md:grid-cols-2 gap-10 lg:gap-16 items-center py-16 lg:py-24" role="region" aria-labelledby="brand-title">
+        <div class="hero-left">
+          <h2 id="brand-title" class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">
+            Security First. Simplified Efficiency.
+          </h2>
+          <p class="lead text-lg text-gray-300 mb-6">
+            Edinaz Solutions develops intelligent software focusing on two pillars: Top-Tier Security and Ultimate User Simplicity. We streamline your system workflows without ever compromising safety.
+          </p>
+
+          <div class="hero-actions flex gap-4">
+            <a href="products.html" class="btn-primary bg-accent2 hover:bg-accent1 text-white py-3 px-6 rounded-xl font-bold transition duration-200 shadow-xl shadow-accent1/30">
+              View Products
+            </a>
+            <a href="#about" class="btn-outline border border-gray-700 text-muted hover:text-white py-3 px-6 rounded-xl font-semibold transition duration-200">
+              Our Mission
+            </a>
+          </div>
+        </div>
+
+        <!-- System Visual Card: Use Logo Image -->
+        <div class="card brand-visual bg-panel p-6 rounded-xl shadow-2xl border border-gray-800/70 backdrop-blur-sm flex flex-col items-center text-center">
+            <!-- Logo Image in Hero Card -->
+            <img src="EdinazSolutions.ico" alt="Edinaz Solutions Logo" class="logo-img w-16 h-16 mb-4" style="box-shadow: 0 8px 25px rgba(123,31,162,0.4);">
+
+            <h3 class="text-2xl font-bold">Edinaz Solutions</h3>
+            <p class="text-sm text-muted mt-2">Software That Thinks. Since 2023.</p>
+            <div class="stats grid grid-cols-2 gap-3 mt-5 w-full">
+              <div class="stat bg-gray-900/50 p-3 rounded-lg text-center border border-gray-800">
+                <small class="block text-xs text-muted">Founded</small>
+                <strong class="block text-xl font-extrabold text-white mt-1">2023</strong>
+              </div>
+              <div class="stat bg-gray-900/50 p-3 rounded-lg text-center border border-gray-800">
+                <small class="block text-xs text-muted">Core Focus</small>
+                <strong class="block text-xl font-extrabold text-white mt-1">Security & Simplicity</strong>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      ---
+
+      <section id="trust" class="py-12 lg:py-20" aria-label="Trust and Community">
+        <h3 class="text-2xl font-bold text-center mb-10">Trusted in the Community</h3>
+        <div class="features grid md:grid-cols-3 gap-6">
+            <div class="feature-card bg-panel p-6 rounded-xl border border-gray-800 transition hover:shadow-lg hover:shadow-accent1/10 hover:-translate-y-1">
+                <span class="text-4xl block mb-3 text-success">⭐</span>
+                <h4 class="text-lg font-bold mb-2">1K+ Verified Reviews</h4>
+                <p class="text-sm text-muted">Over a thousand users rate our software 4.8/5. See how we deliver secure, reliable performance gains.</p>
+            </div>
+            <div class="feature-card bg-panel p-6 rounded-xl border border-gray-800 transition hover:shadow-lg hover:shadow-accent1/10 hover:-translate-y-1">
+                <span class="text-4xl block mb-3 text-accent2">🛡️</span>
+                <h4 class="text-lg font-bold mb-2">Top Security Protocols</h4>
+                <p class="text-sm text-muted">We ensure all optimizations maintain system stability and data integrity. Your security is our first priority.</p>
+            </div>
+            <div class="feature-card bg-panel p-6 rounded-xl border border-gray-800 transition hover:shadow-lg hover:shadow-accent1/10 hover:-translate-y-1">
+                <span class="text-4xl block mb-3 text-yellow-500">💡</span>
+                <h4 class="text-lg font-bold mb-2">Intuitive Simplicity</h4>
+                <p class="text-sm text-muted">Our tools use smart, resource-aware algorithms wrapped in an easy-to-use interface. Powerful results, effortless use.</p>
+            </div>
+        </div>
+      </section>
+
+      ---
+
+      <section id="about" class="about-section py-12 lg:py-20 max-w-3xl mx-auto text-center">
+        <h3 class="text-2xl font-bold mb-4">Our Commitment: Security & Simplicity</h3>
+        <p class="text-base text-gray-400">
+          Founded in 2023 on the principle of secure efficiency, Edinaz Solutions stands for intelligent algorithms and user-friendly design. Our mission is to eliminate digital friction while ensuring every action is performed with utmost regard for system stability and data security. Performance should never compromise safety, and complexity should never hinder results.
+        </p>
+      </section>
+
+      <div class="strip bg-accent1/10 border border-accent1/30 p-6 rounded-xl flex flex-col md:flex-row justify-between items-center my-12 lg:my-20">
+        <h3 class="text-xl font-bold mb-4 md:mb-0">Ready for Top Performance and Security?</h3>
+        <a href="products.html" class="cta text-white py-3 px-6 rounded-xl font-bold shadow-lg shadow-accent1/30">Explore All Products</a>
+      </div>
+
+      <footer id="footer-contact" class="flex justify-between items-center py-6 border-t border-gray-800/50 text-xs text-muted">
+        <div>© Edinaz Solutions • All Rights Reserved.</div>
+        <div class="flex gap-4">
+          <a href="contacts.html" class="hover:text-white transition">Contact Us</a>
+          <span>•</span>
+          <a href="#" class="hover:text-white transition">Imprint</a>
+          <span>•</span>
+          <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
