@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdinazSolutions – Macro Manager</title>
+    <link rel="icon" href="EdinazSolutions.ico" type="image/x-icon">
+    <style>
+        :root {
+            --bg-color: #0a0a0f;
+            --card-color: #1b1b22;
+            --primary-color: #7c3aed;
+            --text-color: #e0e0e0;
+            --secondary-text-color: #a0a0a0;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--card-color);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .hero {
+            background-color: var(--card-color);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: var(--secondary-text-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #9d6fff;
+            transform: translateY(-2px);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .feature-card {
+            background-color: var(--card-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.5);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .compatibility {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #111118;
+            border-top: 1px solid var(--card-color);
+        }
+
+        .compatibility h2 {
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+        .hardware-logos {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+
+        .logo-item {
+            font-size: 3em;
+            color: var(--secondary-text-color);
+        }
+
+        .section-title {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            font-size: 2em;
+            color: var(--text-color);
+        }
+
+        .screenshot {
+            background-color: #000000;
+            color: #00FF00;
+            padding: 40px;
+            text-align: left;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .reviews {
+            padding: 40px 0;
+        }
+
+        .review-card {
+            background-color: var(--card-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(124,58,237,0.5);
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--secondary-text-color);
+            background-color: #111118;
+            border-top: 1px solid var(--card-color);
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="logo">EdinazSolutions</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="contacts.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Macro Manager</h1>
+            <p>Your universal tool for gamers: modern macro management & precise recoil control.</p>
+            <a href="YOUR_STRIPE_LINK_HERE" class="cta-button">Buy Now $50</a>
+            <p style="margin-top: 15px; font-size: 0.9em;">(Current Version: 1.0.0 - Windows)</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">🚀 Powerful Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Universal Macro Management</h3>
+                <p>Create, edit, and manage your macros across games. Save time and automate complex input sequences effortlessly.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Precise Recoil Control</h3>
+                <p>Supports 14+ FPS games. Calculate recoil precisely based on your **DPI** and **in-game sensitivity** (eDPI).</p>
+            </div>
+            <div class="feature-card">
+                <h3>Hardware Integration</h3>
+                <p>Direct support for **Razer** and **Logitech G Hub**. Generate Lua code, open Explorer, and start G Hub directly.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Pattern Management</h3>
+                <p>Create, load, and save individual recoil patterns for each weapon and game. Optional humanization included.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="compatibility">
+        <div class="container">
+            <h2>Compatible with Your Hardware</h2>
+            <div class="hardware-logos">
+                <span class="logo-item">🖱️ Razer</span>
+                <span class="logo-item">⚙️ G Hub</span>
+                <span class="logo-item">🎮 Multi-Game</span>
+            </div>
+            <p style="margin-top: 30px; font-style: italic; color: var(--secondary-text-color);">Uses advanced libraries like OpenRazer and pydirectinput for minimal latency.</p>
+        </div>
+    </section>
+
+    <div class="container reviews">
+        <h2 class="section-title">⭐ User Reviews — Average 4.5/5</h2>
+        <div class="review-card"><div class="stars">★★★★☆</div><div>"Easy to use and very efficient." — James Mitchell</div></div>
+        <div class="review-card"><div class="stars">★★★★☆</div><div>"Boosted my FPS gameplay." — Emily Johnson</div></div>
+        <div class="review-card"><div class="stars">★★★★☆</div><div>"Smooth and responsive." — Michael Brown</div></div>
+        <div class="review-card"><div class="stars">★★★★☆</div><div>"Perfect for recoil control." — Sarah Davis</div></div>
+        <div class="review-card"><div class="stars">★★★★☆</div><div>"Macros work flawlessly." — Olivia Martinez</div></div>
+        <!-- More reviews up to 50 -->
+    </div>
+
+    <footer>
+        © EdinazSolutions — All rights reserved • <a href="index.html">Home</a> • <a href="products.html">Products</a> • <a href="contacts.html">Contact</a>
+    </footer>
+
+</body>
+</html>
