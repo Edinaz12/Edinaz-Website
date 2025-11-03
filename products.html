@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Products — Edinaz Solutions</title>
   <meta name="description" content="Discover intelligent software solutions by Edinaz Solutions, focused on top-tier security and user simplicity." />
-  
+ 
   <!-- Logo/Favicon -->
   <link rel="icon" href="EdinazSolutions.ico" type="image/x-icon">
-  
+ 
   <!-- Google Font & Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  
+ 
   <script>
     tailwind.config = {
       theme: {
@@ -24,6 +24,7 @@
             'accent2': '#9b59ff',
             'muted': '#9aa0a6',
             'systemflow': '#3498db',
+            'speedbot': '#FFD700',
           },
         }
       }
@@ -44,9 +45,10 @@
     .cta:active { transform: translateY(1px); }
     .btn-primary { background: linear-gradient(90deg, theme('colors.accent2'), theme('colors.accent1')); color: white; padding: 0.75rem 1.5rem; border-radius: 0.75rem; font-weight: 600; transition: transform .2s, box-shadow .2s; }
     .btn-primary:hover { box-shadow: 0 6px 20px rgba(123,31,162,0.3); transform: translateY(-1px); }
-    .sys-icon-sf, .sys-icon-mm { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: white; margin-bottom: 1rem; }
+    .sys-icon-sf, .sys-icon-mm, .sys-icon-sb { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: white; margin-bottom: 1rem; }
     .sys-icon-sf { background: linear-gradient(135deg, theme('colors.systemflow'), #2980b9); box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4); }
     .sys-icon-mm { background: linear-gradient(135deg, theme('colors.accent1'), theme('colors.accent2')); box-shadow: 0 8px 25px rgba(123,31,162,0.4); }
+    .sys-icon-sb { background: linear-gradient(135deg, theme('colors.speedbot'), #FF4500); box-shadow: 0 8px 25px rgba(255,215,0,0.4); }
     .sys-icon-placeholder { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: theme('colors.muted'); background-color: theme('colors.panel'); border: 2px dashed theme('colors.gray.700'); margin-bottom: 1rem; }
     @media (max-width: 768px) { body { padding: 1rem; } .product-list { grid-template-columns: 1fr !important; } header { flex-direction: column; align-items: flex-start; gap: 1rem; } nav { margin-top: 0.5rem; } }
   </style>
@@ -57,7 +59,6 @@
     <div class="blob b2"></div>
     <div class="blob b3"></div>
   </div>
-
   <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <header class="flex justify-between items-center py-6 border-b border-gray-800/50">
       <div class="flex items-center gap-4">
@@ -67,7 +68,6 @@
           <p class="text-xs text-muted">Product Portfolio</p>
         </div>
       </div>
-
       <nav aria-label="Main Navigation" class="flex items-center gap-4 text-sm font-semibold">
         <a href="index.html#about" class="text-muted hover:text-white transition">About</a>
         <a href="products.html" class="text-white transition underline underline-offset-4">Products</a>
@@ -75,13 +75,10 @@
         <a href="systemflow.html" class="cta text-white py-2 px-4 rounded-xl shadow-lg">System Flow</a>
       </nav>
     </header>
-
     <main class="py-12">
       <h2 class="text-3xl font-extrabold tracking-tight mb-3">Our Intelligent Product Portfolio</h2>
       <p class="text-lg text-muted mb-10 max-w-3xl">We focus on developing simple, highly secure software that maximizes system performance and user efficiency.</p>
-
       <section class="product-list grid md:grid-cols-2 lg:grid-cols-3 gap-8" aria-label="Product List">
-
         <!-- Product Card 1: System Flow -->
         <div class="product-card bg-panel p-6 rounded-2xl border border-gray-800/70 shadow-xl backdrop-blur-sm flex flex-col">
           <div class="sys-icon-sf">SF</div>
@@ -93,7 +90,6 @@
             <a href="systemflow.html" class="btn-primary inline-block text-center w-full">View Details</a>
           </div>
         </div>
-
         <!-- Product Card 2: Macro Manager -->
         <div class="product-card bg-panel p-6 rounded-2xl border border-gray-800/70 shadow-xl backdrop-blur-sm flex flex-col">
           <div class="sys-icon-mm">MM</div>
@@ -105,7 +101,6 @@
             <a href="macro_manager.html" class="btn-primary inline-block text-center w-full">View Details</a>
           </div>
         </div>
-
         <!-- Product Card 3: Upcoming Solution -->
         <div class="product-card bg-panel p-6 rounded-2xl border border-gray-800/70 shadow-xl opacity-80 backdrop-blur-sm flex flex-col">
           <div class="sys-icon-placeholder">⏳</div>
@@ -119,8 +114,26 @@
             </a>
           </div>
         </div>
-
       </section>
-
-      <footer id="contact" class="flex justify-between items-center py-6 mt-12 border-t border-gray-
-
+      <!-- New Section for SpeedBot -->
+      <section class="mt-12" aria-label="Featured Product">
+        <h3 class="text-2xl font-extrabold tracking-tight mb-6">Featured: SpeedBot</h3>
+        <div class="product-card bg-panel p-6 rounded-2xl border border-gray-800/70 shadow-xl backdrop-blur-sm flex flex-col max-w-md mx-auto">
+          <div class="sys-icon-sb">SB</div>
+          <h4 class="text-xl font-bold mb-2">SpeedBot — Aim. Accelerate. Dominate.</h4>
+          <p class="text-base text-muted mb-4 flex-grow">
+            SpeedBot enhances gaming with Aimbot, adjustable Mouse Acceleration, Triggerbot, and Hardware Colorbot support. Compatible with Macku and upcoming B+ Pro/Ferrum. Limited to 10 slots.
+          </p>
+          <div class="product-actions mt-auto pt-4 border-t border-gray-800">
+            <a href="speedbot.html" class="btn-primary inline-block text-center w-full">View Details</a>
+          </div>
+        </div>
+      </section>
+      <footer id="contact" class="flex justify-between items-center py-6 mt-12 border-t border-gray-800/50">
+        <div>© Edinaz Solutions • All Rights Reserved.</div>
+        <div><a href="contacts.html">Contact Us</a> • Imprint • Privacy Policy</div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
