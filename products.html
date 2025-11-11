@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Products — Edinaz Solutions</title>
   <meta name="description" content="Discover intelligent software solutions by Edinaz Solutions, focused on top-tier security and user simplicity." />
- 
   <!-- Logo/Favicon -->
   <link rel="icon" href="EdinazSolutions.ico" type="image/x-icon">
- 
   <!-- Google Font & Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
- 
   <script>
     tailwind.config = {
       theme: {
@@ -45,10 +42,11 @@
     .cta:active { transform: translateY(1px); }
     .btn-primary { background: linear-gradient(90deg, theme('colors.accent2'), theme('colors.accent1')); color: white; padding: 0.75rem 1.5rem; border-radius: 0.75rem; font-weight: 600; transition: transform .2s, box-shadow .2s; }
     .btn-primary:hover { box-shadow: 0 6px 20px rgba(123,31,162,0.3); transform: translateY(-1px); }
-    .sys-icon-sf, .sys-icon-mm, .sys-icon-cb { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: white; margin-bottom: 1rem; }
+    .sys-icon-sf, .sys-icon-mm, .sys-icon-cb, .sys-icon-fd { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: white; margin-bottom: 1rem; }
     .sys-icon-sf { background: linear-gradient(135deg, theme('colors.systemflow'), #2980b9); box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4); }
     .sys-icon-mm { background: linear-gradient(135deg, theme('colors.accent1'), theme('colors.accent2')); box-shadow: 0 8px 25px rgba(123,31,162,0.4); }
     .sys-icon-cb { background: linear-gradient(135deg, theme('colors.speedbot'), #FF4500); box-shadow: 0 8px 25px rgba(255,215,0,0.4); }
+    .sys-icon-fd { background: linear-gradient(135deg, theme('colors.accent1'), theme('colors.accent2')); box-shadow: 0 8px 25px rgba(123,31,162,0.4); }
     .sys-icon-placeholder { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: theme('colors.muted'); background-color: theme('colors.panel'); border: 2px dashed theme('colors.gray.700'); margin-bottom: 1rem; }
     @media (max-width: 768px) { body { padding: 1rem; } .product-list { grid-template-columns: 1fr !important; } header { flex-direction: column; align-items: flex-start; gap: 1rem; } nav { margin-top: 0.5rem; } }
   </style>
@@ -101,17 +99,15 @@
             <a href="macro_manager.html" class="btn-primary inline-block text-center w-full">View Details</a>
           </div>
         </div>
-        <!-- Product Card 3: Upcoming Solution -->
-        <div class="product-card bg-panel p-6 rounded-2xl border border-gray-800/70 shadow-xl opacity-80 backdrop-blur-sm flex flex-col">
-          <div class="sys-icon-placeholder">⏳</div>
-          <h4 class="text-xl font-bold mb-2 text-muted">Upcoming Solution (TBA)</h4>
+        <!-- Product Card 3: Fortnite DMA Elite -->
+        <div class="product-card bg-panel p-6 rounded-2xl border border-gray-800/70 shadow-xl backdrop-blur-sm flex flex-col">
+          <div class="sys-icon-fd">FD</div>
+          <h4 class="text-xl font-bold mb-2">Fortnite DMA Elite — Premium Hardware Cheat</h4>
           <p class="text-base text-muted mb-4 flex-grow">
-            We are currently developing our next solution, focusing on streamlining complex user workflows and enhancing cross-application simplicity. Stay tuned!
+            Advanced DMA Cheat with Aimbot, Triggerbot, ESP Zone Predict & Full Visuals. Platform Tracker, Names, Ranks & Custom Settings Included.
           </p>
           <div class="product-actions mt-auto pt-4 border-t border-gray-800">
-            <a href="contacts.html" class="text-muted border border-gray-700 hover:border-accent2 hover:text-accent2 py-3 px-6 rounded-xl font-semibold transition inline-block text-center w-full">
-              Follow for Updates
-            </a>
+            <a href="fortnite_dma.html" class="btn-primary inline-block text-center w-full">View Details</a>
           </div>
         </div>
       </section>
@@ -137,6 +133,3 @@
   </div>
 </body>
 </html>
-
-
-
