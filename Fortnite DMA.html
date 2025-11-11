@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortnite DMA Elite — Slotted DMA Hardware Cheat</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-dark:#0a0a0c;
+  --accent1:#7b1fa2;
+  --accent2:#9b59ff;
+  --success:#FFD700;
+  --muted:#9aa0a6;
+  --glass:rgba(255,255,255,0.03);
+  --glass2:rgba(255,255,255,0.02);
+  font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg-dark);color:#e9eef6;line-height:1.5;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1200px;margin:0 auto;padding:40px 20px;position:relative;}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:60px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{width:60px;height:60px;background:linear-gradient(135deg,var(--accent1),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:26px;}
+nav a{margin-left:16px;font-weight:600;color:var(--muted);transition:0.2s;}
+nav a:hover{color:white;}
+.cta{padding:12px 20px;border-radius:16px;font-weight:800;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white;box-shadow:0 8px 24px rgba(123,31,162,0.3);transition:0.3s;}
+.cta:hover{transform:scale(1.05);box-shadow:0 12px 36px rgba(123,31,162,0.4);}
+.hero{
+  position: relative;
+  text-align:center;
+  padding:80px 30px;
+  border-radius:24px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  backdrop-filter:blur(6px);
+  margin-bottom:60px;
+  overflow:hidden;
+}
+.hero-badge{
+  display:inline-block;
+  background:var(--success);
+  color:var(--bg-dark);
+  font-weight:700;
+  padding:6px 14px;
+  border-radius:8px;
+  font-size:14px;
+  margin-bottom:20px;
+}
+.hero h1{
+  font-size:42px;
+  font-weight:800;
+  color:white;
+  margin-bottom:20px;
+}
+.hero p{
+  font-size:16px;
+  color:var(--muted);
+  max-width:600px;
+  margin:0 auto 30px auto;
+  line-height:1.5;
+}
+.hero-actions{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;}
+.btn-primary{
+  padding:14px 28px;
+  border-radius:20px;
+  font-weight:700;
+  background:linear-gradient(90deg,var(--accent2),var(--accent1));
+  color:white;
+  box-shadow:0 8px 24px rgba(123,31,162,0.3);
+  transition:0.3s;
+}
+.btn-primary:hover{transform:scale(1.05);box-shadow:0 12px 36px rgba(123,31,162,0.4);}
+.btn-secondary{
+  padding:14px 28px;
+  border-radius:20px;
+  font-weight:700;
+  border:2px solid var(--accent2);
+  color:var(--accent2);
+  background:transparent;
+  transition:0.3s;
+}
+.btn-secondary:hover{background:var(--accent2);color:white;transform:scale(1.05);}
+.firmware-info{
+  display:inline-block;
+  margin-top:15px;
+  padding:8px 16px;
+  border-radius:12px;
+  background:rgba(46,204,113,0.05);
+  color:var(--success);
+  font-weight:700;
+  font-size:14px;
+}
+.features{margin-bottom:60px;}
+.accordion-item{
+  margin-bottom:20px;
+  opacity:0;
+  transform:translateY(50px);
+  transition:opacity 1s ease-out,transform 1s ease-out;
+}
+.accordion-item.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.accordion-header{
+  background:var(--glass2);
+  padding:15px;
+  cursor:pointer;
+  border-radius:10px 10px 0 0;
+  font-size:1.8em;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 5px rgba(0,0,0,0.3);
+  transition:background 0.3s ease;
+}
+.accordion-header:hover{
+  background:rgba(255,255,255,0.2);
+}
+.accordion-header::after{
+  content:'+';
+  font-size:1.5em;
+  transition:transform 0.3s ease;
+}
+.accordion-header.active::after{
+  transform:rotate(45deg);
+}
+.accordion-content{
+  background:var(--glass2);
+  padding:0 15px;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.3s ease,padding 0.3s ease;
+  border-radius:0 0 10px 10px;
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.accordion-content.active{
+  padding:15px;
+  max-height:500px; /* Adjust based on content */
+}
+.feature-list{
+  list-style:none;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+.feature-list li{
+  background:var(--glass);
+  border-radius:10px;
+  padding:10px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(218,112,214,0.3);
+  transition:transform 0.3s ease;
+}
+.feature-list li:hover{
+  transform:translateY(-5px);
+}
+.pricing-section{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-bottom:80px;}
+.price-card{background:var(--glass2);padding:40px 28px;border-radius:20px;min-width:300px;border:1px solid rgba(255,255,255,0.03);position:relative;box-shadow:0 12px 36px rgba(123,31,162,0.2);transition:all 0.3s;text-align:center;}
+.price-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 48px rgba(123,31,162,0.35);}
+.price-card .tag{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--success);color:var(--bg-dark);font-weight:800;padding:6px 18px;border-radius:999px;font-size:14px;letter-spacing:0.5px;}
+.price-card h4{font-size:22px;margin-bottom:12px;}
+.price{font-size:44px;font-weight:800;margin:20px 0;color:white;}
+.price .currency{font-size:24px;vertical-align:top;color:var(--success);}
+.price .period{display:block;font-size:14px;font-weight:400;color:var(--muted);margin-top:6px;}
+.price-card ul{list-style:none;padding-left:0;margin-top:18px;}
+.price-card ul li{margin-bottom:10px;font-size:14px;color:var(--muted);}
+.price-card a.btn-primary{display:inline-block;padding:12px 22px;margin-top:15px;font-weight:700;border-radius:16px;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white;box-shadow:0 8px 24px rgba(123,31,162,0.3);transition:0.3s;}
+.price-card a.btn-primary:hover{transform:scale(1.05);box-shadow:0 12px 36px rgba(123,31,162,0.4);}
+footer{margin-top:80px;text-align:center;font-size:13px;color:var(--muted);line-height:1.6;}
+@media(max-width:900px){.hero h1{font-size:36px;}}
+@media(max-width:600px){nav{display:none}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="brand">
+    <a href="index.html" class="logo">FD</a>
+    <div>
+      <h1>Fortnite DMA Elite</h1>
+      <p>Slotted DMA Cheat</p>
+    </div>
+  </div>
+  <nav>
+    <a href="products.html">Products</a>
+    <a href="contacts.html">Contact</a>
+    <a href="#pricing" class="cta">Buy Now</a>
+  </nav>
+</header>
+<section class="hero">
+  <div class="hero-badge">UNDETECTABLE DMA</div>
+  <h1>Fortnite DMA Elite — Premium Hardware Cheat</h1>
+  <p>Advanced DMA Cheat with Aimbot, Triggerbot, ESP Zone Predict & Full Visuals.<br>Platform Tracker, Names, Ranks & Custom Settings Included.</p>
+  <div class="hero-actions">
+    <a href="#pricing" class="btn-primary">Secure Access</a>
+    <a href="#features" class="btn-secondary">View Features</a>
+  </div>
+  <div class="firmware-info">✅ Undetectable & Customizable</div>
+</section>
+<section id="features" class="features">
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">Aim Features</div>
+      <div class="accordion-content">
+        <ul class="feature-list">
+          <li>Aimbot</li>
+          <li>Smooth</li>
+          <li>FOV</li>
+          <li>Prediction</li>
+          <li>Prediction Multiplier</li>
+          <li>Aimbot Bone Mode (Static)</li>
+          <li>Aimbot Hitboxes (Select...)</li>
+          <li>Aim Key</li>
+          <li>TriggerBot</li>
+          <li>Delay</li>
+          <li>Target Hitboxes (Select...)</li>
+          <li>Trg Key</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">Visuals (ESP)</div>
+      <div class="accordion-content">
+        <ul class="feature-list">
+          <li>Box</li>
+          <li>Skeleton</li>
+          <li>Distance</li>
+          <li>Show FOV</li>
+          <li>Crosshair</li>
+          <li>Show Prediction</li>
+          <li>Indicators</li>
+          <li>Radar</li>
+          <li>Zoom</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">Playerlist</div>
+      <div class="accordion-content">
+        <ul class="feature-list">
+          <li>Playerlist (Track Opponents)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">Misc Features</div>
+      <div class="accordion-content">
+        <ul class="feature-list">
+          <li>KmBox Support B/net</li>
+          <li>Fuser Mode</li>
+          <li>VSync</li>
+          <li>Show FPS</li>
+          <li>Save</li>
+          <li>Load</li>
+          <li>Close Cheat</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="pricing" class="pricing-section">
+  <div class="price-card">
+    <span class="tag">🔥 Elite Access</span>
+    <h4>Monthly Subscription</h4>
+    <div class="price"><span class="currency">€</span>20<span class="period">/month</span></div>
+    <p>Full access to all DMA features for ultimate Fortnite domination.</p>
+    <a href="https://buy.stripe.com/6oU14m4U67En4up8Ts4F20j" target="_blank" class="btn-primary">Buy Now</a>
+    <ul>
+      <li>✅ All Features Included</li>
+      <li>✅ Undetectable DMA</li>
+      <li>✅ Custom Settings</li>
+    </ul>
+  </div>
+</section>
+<footer>
+  <div>© 2025 Fortnite DMA Elite • All Rights Reserved.</div>
+  <div><a href="contacts.html" style="color: var(--accent2)">Contact</a> • Imprint • Privacy Policy</div>
+</footer>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.accordion-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      header.classList.toggle('active');
+      const content = header.nextElementSibling;
+      content.classList.toggle('active');
+    });
+  });
+});
+</script>
+</body>
+</html>
